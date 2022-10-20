@@ -6,12 +6,15 @@
 /*   By: manuelbeeler <manuelbeeler@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/14 12:49:06 by jjuntune          #+#    #+#             */
-/*   Updated: 2022/04/02 18:07:03 by manuelbeele      ###   ########.fr       */
+/*   Updated: 2022/10/20 15:48:10 by manuelbeele      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/filler.h"
 
+/*
+** Function to assign characters to each player.
+*/
 static void	ft_assign_character_to_player(t_filler *f)
 {
 	if (f->p_num == 1)
@@ -26,6 +29,10 @@ static void	ft_assign_character_to_player(t_filler *f)
 	}
 }
 
+/*
+** The function reads the input, gets relevant parameters and creates an empty
+** map.
+*/
 static int	ft_setup_map(t_filler *f)
 {
 	char	*line;
@@ -55,6 +62,10 @@ static int	ft_setup_map(t_filler *f)
 	return (1);
 }
 
+/*
+** The function checks that the input is valid and calls the functions to place
+** the piece.
+*/
 int	main(void)
 {
 	t_filler	f;

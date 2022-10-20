@@ -6,12 +6,16 @@
 /*   By: manuelbeeler <manuelbeeler@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/14 12:49:06 by jjuntune          #+#    #+#             */
-/*   Updated: 2022/04/02 17:45:25 by manuelbeele      ###   ########.fr       */
+/*   Updated: 2022/10/20 16:13:08 by manuelbeele      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/filler.h"
 
+/*
+** Get the lowest heat number that is touched by the piece. Save it as best
+** solution if it is lower then the previous best heat number.
+*/
 static void	ft_find_lowest_heat(t_filler *f, int pos)
 {
 	int	piece;
@@ -29,6 +33,9 @@ static void	ft_find_lowest_heat(t_filler *f, int pos)
 	}
 }
 
+/*
+** Function to check if the piece fits at the current field.
+*/
 static void	ft_try_to_make_it_fit(t_filler *f, int pos)
 {
 	int		piece;
@@ -52,6 +59,11 @@ static void	ft_try_to_make_it_fit(t_filler *f, int pos)
 		ft_find_lowest_heat(f, pos);
 }
 
+/*
+** Go through all the fields on the map and check if the piece can be placed
+** there. If it can be placed, place it in the place where the piece touches the
+** lowest heat number.
+*/
 void	ft_place_piece(t_filler *f)
 {
 	int		pos;

@@ -6,12 +6,15 @@
 /*   By: manuelbeeler <manuelbeeler@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/14 12:49:06 by jjuntune          #+#    #+#             */
-/*   Updated: 2022/04/02 17:43:46 by manuelbeele      ###   ########.fr       */
+/*   Updated: 2022/10/20 15:55:31 by manuelbeele      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/filler.h"
 
+/*
+** Function to copy the shape of the piece from the input to a structure.
+*/
 static void	ft_copy_piece(t_filler *f)
 {
 	int		i;
@@ -26,6 +29,9 @@ static void	ft_copy_piece(t_filler *f)
 	}
 }
 
+/*
+** Function to get the size and shape of the piece that needs to be placed.
+*/
 static int	ft_get_piece(t_filler *f)
 {
 	int		i;
@@ -50,6 +56,9 @@ static int	ft_get_piece(t_filler *f)
 	return (1);
 }
 
+/*
+** Function to check that map only contains valid characters.
+*/
 static int	ft_check_map(t_filler *f, char *line)
 {
 	int		line_len;
@@ -70,6 +79,9 @@ static int	ft_check_map(t_filler *f, char *line)
 		return (0);
 }
 
+/*
+** Function to update the map to include the last placed piece of the opponent.
+*/
 static int	ft_update_map(t_filler *f)
 {
 	char	*line;
@@ -98,6 +110,10 @@ static int	ft_update_map(t_filler *f)
 	return (1);
 }
 
+/*
+** Function to read the input in each round, update the map and call the
+** functions to place the new piece.
+*/
 void	ft_read_input(t_filler f, int *valid_solution)
 {
 	char		*line;
